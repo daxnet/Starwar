@@ -24,6 +24,7 @@ namespace Starwar
         private const string BgmContentName = "bgm";
         private const string ExplosionSoundContentName = "explosionSound";
         private const string LaserSoundContentName = "laserSound";
+        private const string GameOverSoundContentName = "gameOver";
 
         private const int ParallaxStarCropLength = 32;
 
@@ -47,15 +48,22 @@ namespace Starwar
         private SoundEffect bgmEffect;
         private SoundEffect explosionSoundEffect;
         private SoundEffect laserSoundEffect;
+        private SoundEffect gameOverSoundEffect;
 
         private SoundEffectInstance laserSound;
         private SoundEffectInstance explosionSound;
+        private SoundEffectInstance gameOverSound;
+
+        private readonly TimeSpan gameOverTimeSpan = TimeSpan.FromSeconds(3);
+        private TimeSpan gameOverTimeCounter = TimeSpan.Zero;
+
+        private bool gameOver = false;
+        private bool gameOverSoundPlayed = false;
 
         // sprites
         private SpriteBatch spriteBatch;
         private SpaceshipSprite spaceshipSprite;
         private BackgroundSprite backgroundSprite;
-        //private AnimatedSprite explosionSprite;
         
         public StarwarGame()
         {
@@ -104,7 +112,14 @@ namespace Starwar
             explosionSoundEffect = this.Content.Load<SoundEffect>(ExplosionSoundContentName);
             explosionSound = explosionSoundEffect.CreateInstance();
             explosionSound.Volume = 1.0F;
+            
             laserSoundEffect = this.Content.Load<SoundEffect>(LaserSoundContentName);
+            laserSound = laserSoundEffect.CreateInstance();
+            laserSound.Volume = 1.0F;
+
+            gameOverSoundEffect = this.Content.Load<SoundEffect>(GameOverSoundContentName);
+            gameOverSound = gameOverSoundEffect.CreateInstance();
+            gameOverSound.Volume = 1.0F;
             //laserSound = laserSoundEffect.CreateInstance();
             //laserSound.Volume = 0.8F;
 
@@ -142,6 +157,11 @@ namespace Starwar
             // TODO: Unload any non ContentManager content here
         }
 
+        protected override void EndRun()
+        {
+            base.EndRun();
+        }
+
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -152,43 +172,85 @@ namespace Starwar
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            var mouseState = Mouse.GetState();
-
-            spaceshipSprite.X = mouseState.X - spaceshipSprite.Width / 2;
-            spaceshipSprite.Y = mouseState.Y - spaceshipSprite.Height / 2;
-
-            if (mouseState.LeftButton == ButtonState.Pressed)
-            {
-                var laserSprite = new LaserSprite(laserTexture,
-                    new Vector2(spaceshipSprite.X + (spaceshipSprite.Width - laserTexture.Width)/2.0F,
-                        spaceshipSprite.Y));
-                PlaySound(laserSoundEffect, laserSound, 0.1F);
-                this.laserPool.Add(laserSprite);
-            }
-
-            //this.explosionSprite.Update(gameTime);
             this.backgroundSprite.Update(gameTime);
-            this.starGenerator.Update(gameTime);
-            this.enemyGenerator.Update(gameTime);
 
-            this.laserPool.Update(gameTime);
-            this.explosionPool.Update(gameTime);
-            
-
-            foreach (var laser in this.laserPool.Sprites)
+            if (spaceshipSprite.IsActive)
             {
+                var mouseState = Mouse.GetState();
+
+                spaceshipSprite.X = mouseState.X - spaceshipSprite.Width/2;
+                spaceshipSprite.Y = mouseState.Y - spaceshipSprite.Height/2;
+
+                if (mouseState.LeftButton == ButtonState.Pressed)
+                {
+                    var laserSprite = new LaserSprite(laserTexture,
+                        new Vector2(spaceshipSprite.X + (spaceshipSprite.Width - laserTexture.Width)/2.0F,
+                            spaceshipSprite.Y));
+                    PlaySound(laserSoundEffect, laserSound);
+                    this.laserPool.Add(laserSprite);
+                }
+
                 foreach (var enemy in this.enemyPool.Sprites)
                 {
-                    if (laser.CollidesWith(enemy))
+                    foreach (var laser in this.laserPool.Sprites)
                     {
-                        PlaySound(explosionSoundEffect, explosionSound);
-                        laser.IsActive = false;
-                        enemy.IsActive = false;
-                        var explosionSprite = new AnimatedSprite(explosionTexture, new Vector2(enemy.X, enemy.Y),
-                            new SpriteSheet(64, 64, 16, 0, 0), TimeSpan.FromMilliseconds(5), 1);
-                        this.explosionPool.Add(explosionSprite);
+                        if (laser.CollidesWith(enemy))
+                        {
+                            PlaySound(explosionSoundEffect, explosionSound);
+                            laser.IsActive = false;
+                            enemy.IsActive = false;
+                            var explosionSprite = new AnimatedSprite(explosionTexture, new Vector2(enemy.X, enemy.Y),
+                                new SpriteSheet(64, 64, 16, 0, 0), TimeSpan.FromMilliseconds(5), 1);
+                            this.explosionPool.Add(explosionSprite);
+                        }
                     }
+
+                    //if (enemy.CollidesWith(spaceshipSprite))
+                    //{
+                    //    PlaySound(explosionSoundEffect, explosionSound);
+                    //    enemy.IsActive = false;
+                    //    spaceshipSprite.IsActive = false;
+                    //    var explosionSprite = new AnimatedSprite(explosionTexture, new Vector2(spaceshipSprite.X, spaceshipSprite.Y),
+                    //            new SpriteSheet(64, 64, 16, 0, 0), TimeSpan.FromMilliseconds(5), 1);
+                    //    this.explosionPool.Add(explosionSprite);
+                    //}
                 }
+            }
+
+            if (!spaceshipSprite.IsActive)
+            {
+                gameOverTimeCounter += gameTime.ElapsedGameTime;
+                if (gameOverTimeCounter >= gameOverTimeSpan)
+                {
+                    gameOver = true;
+                }
+            }
+
+            if (gameOver)
+            {
+                if (explosionSound != null && !explosionSound.IsDisposed)
+                {
+                    explosionSound.Stop(true);
+                    explosionSound.Dispose();
+                }
+                if (laserSound != null && !laserSound.IsDisposed)
+                {
+                    laserSound.Stop(true);
+                    laserSound.Dispose();
+                }
+                bgmEffect.Dispose();
+                if (gameOverSound.State != SoundState.Playing && !gameOverSoundPlayed)
+                {
+                    gameOverSound.Play();
+                    gameOverSoundPlayed = true;
+                }
+            }
+            else
+            {
+                this.starGenerator.Update(gameTime);
+                this.enemyGenerator.Update(gameTime);
+                this.laserPool.Update(gameTime);
+                this.explosionPool.Update(gameTime);
             }
             base.Update(gameTime);
         }
@@ -208,7 +270,10 @@ namespace Starwar
             //this.explosionSprite.Draw(gameTime, spriteBatch);
             backgroundSprite.Draw(gameTime, spriteBatch);
             starGenerator.Draw(gameTime, spriteBatch);
-            spaceshipSprite.Draw(gameTime, spriteBatch);
+            if (spaceshipSprite.IsActive)
+            {
+                spaceshipSprite.Draw(gameTime, spriteBatch);
+            }
 
             enemyGenerator.Draw(gameTime, spriteBatch);
 
@@ -266,6 +331,7 @@ namespace Starwar
                 this.bgmEffect.Dispose();
                 this.explosionSoundEffect.Dispose();
                 this.laserSoundEffect.Dispose();
+                this.gameOverSoundEffect.Dispose();
 
             }
             base.Dispose(disposing);

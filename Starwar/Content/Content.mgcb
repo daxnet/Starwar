@@ -91,15 +91,21 @@
 /processorParam:Quality=Best
 /build:bgm.mp3
 
+#begin explosionSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:explosionSound.wav
+
 #begin laserSound.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:laserSound.wav
 
-#begin explosionSound.wav
-/importer:WavImporter
+#begin gameOver.mp3
+/importer:Mp3Importer
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:explosionSound.wav
+/build:gameOver.mp3
 
