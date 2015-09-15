@@ -13,18 +13,24 @@
 
         private TimeSpan diff = TimeSpan.Zero;
 
+        public bool IsActive { get; set; }
+
         public SpriteGenerator(Func<T> factory, SpritePool<T> spritePool, TimeSpan interval)
         {
             this.factory = factory;
             this.spritePool = spritePool;
             this.interval = interval;
+            this.IsActive = true;
         }
         public void Update(GameTime gameTime)
         {
             diff += gameTime.ElapsedGameTime;
             if (diff >= interval)
             {
-                spritePool.Add(factory());
+                if (this.IsActive)
+                {
+                    spritePool.Add(factory());
+                }
                 diff= TimeSpan.Zero;
             }
             spritePool.Update(gameTime);

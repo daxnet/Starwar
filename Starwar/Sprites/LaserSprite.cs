@@ -5,7 +5,7 @@
 
     internal sealed class LaserSprite : Sprite
     {
-        private const float Speed = 35;
+        private const float Speed = 40;
 
 
         public LaserSprite(Texture2D texture, Vector2 position) : base(texture, position)

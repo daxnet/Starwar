@@ -46,6 +46,15 @@
             get { return this.pool.Count; }
         }
 
+        public void Clear()
+        {
+            foreach (var sprite in pool.Values)
+            {
+                sprite.IsActive = false;
+            }
+            this.pool.Clear();
+        }
+
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             foreach (var sprite in pool.Values)

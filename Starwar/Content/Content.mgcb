@@ -109,3 +109,9 @@
 /processorParam:Quality=Best
 /build:gameOver.mp3
 
+#begin gameOverFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:gameOverFont.spritefont
+
