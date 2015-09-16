@@ -23,6 +23,8 @@
             this.pool.TryAdd(sprite.Id, sprite);
         }
 
+        public bool IsActive { get; set; }
+
         public void Update(GameTime gameTime)
         {
             foreach (var sprite in pool.Values)

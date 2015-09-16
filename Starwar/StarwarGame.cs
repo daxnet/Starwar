@@ -25,10 +25,8 @@ namespace Starwar
         private const string BgmContentName = "bgm";
         private const string ExplosionSoundContentName = "explosionSound";
         private const string LaserSoundContentName = "laserSound";
-        private const string GameOverSoundContentName = "gameOver";
-        private const string GameOverFontContentName = "gameOverFont";
+        
 
-        private const int ParallaxStarCropLength = 32;
 
         private readonly GraphicsDeviceManager graphics;
         private readonly FrameCounter frameCounter = new FrameCounter();
@@ -41,7 +39,7 @@ namespace Starwar
         
         // texture and content
         private SpriteFont messageFont;
-        private SpriteFont gameOverFont;
+        
         private Texture2D spaceshipTexture;
         private Texture2D laserTexture;
         private Texture2D enemy4Texture;
@@ -51,18 +49,11 @@ namespace Starwar
         private SoundEffect bgmEffect;
         private SoundEffect explosionSoundEffect;
         private SoundEffect laserSoundEffect;
-        private SoundEffect gameOverSoundEffect;
+        
 
         private SoundEffectInstance laserSound;
         private SoundEffectInstance explosionSound;
-        private SoundEffectInstance gameOverSound;
-
-        private readonly TimeSpan gameOverTimeSpan = TimeSpan.FromSeconds(3);
-        private readonly bool unlimitedLife = false;
-        private TimeSpan gameOverTimeCounter = TimeSpan.Zero;
-
-        private bool gameOver = false;
-        private bool gameOverSoundPlayed = false;
+        private GameOverScene gameOverScene;
 
         // sprites
         private SpriteBatch spriteBatch;
@@ -77,6 +68,7 @@ namespace Starwar
             enemyPool = new SpritePool<EnemySprite>(graphics);
             explosionPool = new SpritePool<AnimatedSprite>(graphics);
             starPool = new SpritePool<ParallaxStarSprite>(graphics);
+            
         }
 
         /// <summary>
@@ -107,7 +99,7 @@ namespace Starwar
 
             // load texture and contents
             messageFont = this.Content.Load<SpriteFont>(MessageFontContentName);
-            gameOverFont = this.Content.Load<SpriteFont>(GameOverFontContentName);
+            
             laserTexture = this.Content.Load<Texture2D>(LaserContentName);
             spaceshipTexture = this.Content.Load<Texture2D>(SpaceshipContentName);
             enemy4Texture = this.Content.Load<Texture2D>(Enemy4ContentName);
@@ -123,17 +115,9 @@ namespace Starwar
             laserSound = laserSoundEffect.CreateInstance();
             laserSound.Volume = 1.0F;
 
-            gameOverSoundEffect = this.Content.Load<SoundEffect>(GameOverSoundContentName);
-            gameOverSound = gameOverSoundEffect.CreateInstance();
-            gameOverSound.Volume = 1.0F;
-            //laserSound = laserSoundEffect.CreateInstance();
-            //laserSound.Volume = 0.8F;
-
             // create sprites
             spaceshipSprite = new SpaceshipSprite(spaceshipTexture);
             backgroundSprite = new BackgroundSprite(backgroundTexture, graphics);
-            //explosionSprite = new AnimatedSprite(this.explosionTexture, new Vector2(100, 100),
-            //    new SpriteSheet(64, 64, 16, 0, 0), TimeSpan.FromMilliseconds(5));
 
             // create sprite generators
             enemyGenerator =
@@ -148,6 +132,27 @@ namespace Starwar
                     Utils.GetRandomNumber(1,
                         GraphicsDevice.Viewport.Width - starTexture.Width), 1), Utils.GetRandomNumber(5, 20)), starPool,
                     TimeSpan.FromMilliseconds(100));
+
+            gameOverScene = new GameOverScene(this, () => !spaceshipSprite.IsActive, () =>
+            {
+                this.enemyPool.Clear();
+                this.laserPool.Clear();
+                this.explosionPool.Clear();
+
+                this.enemyGenerator.IsActive = false;
+
+                if (explosionSound != null && !explosionSound.IsDisposed)
+                {
+                    explosionSound.Stop(true);
+                    explosionSound.Dispose();
+                }
+                if (laserSound != null && !laserSound.IsDisposed)
+                {
+                    laserSound.Stop(true);
+                    laserSound.Dispose();
+                }
+                bgmEffect.Dispose();
+            }) {IsActive = true};
 
             var bgm = bgmEffect.CreateInstance();
             bgm.IsLooped = true;
@@ -170,7 +175,8 @@ namespace Starwar
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
+                Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
             this.backgroundSprite.Update(gameTime);
@@ -206,54 +212,25 @@ namespace Starwar
                         }
                     }
 
-                    if (!unlimitedLife && enemy.CollidesWith(spaceshipSprite))
+                    if (gameOverScene.IsActive && enemy.CollidesWith(spaceshipSprite))
                     {
                         PlaySound(explosionSoundEffect, explosionSound);
                         enemy.IsActive = false;
                         spaceshipSprite.IsActive = false;
-                        var explosionSprite = new AnimatedSprite(explosionTexture, new Vector2(spaceshipSprite.X, spaceshipSprite.Y),
-                                new SpriteSheet(64, 64, 16, 0, 0), TimeSpan.FromMilliseconds(5), 1);
+                        var explosionSprite = new AnimatedSprite(explosionTexture,
+                            new Vector2(spaceshipSprite.X, spaceshipSprite.Y),
+                            new SpriteSheet(64, 64, 16, 0, 0), TimeSpan.FromMilliseconds(5), 1);
                         this.explosionPool.Add(explosionSprite);
                     }
                 }
             }
 
-            if (!spaceshipSprite.IsActive)
-            {
-                gameOverTimeCounter += gameTime.ElapsedGameTime;
-                if (gameOverTimeCounter >= gameOverTimeSpan)
-                {
-                    gameOver = true;
-                }
-            }
+            this.gameOverScene.Update(gameTime);
 
-            if (gameOver)
-            {
-                this.enemyPool.Clear();
-                //this.enemyGenerator.Update(gameTime);
-                if (explosionSound != null && !explosionSound.IsDisposed)
-                {
-                    explosionSound.Stop(true);
-                    explosionSound.Dispose();
-                }
-                if (laserSound != null && !laserSound.IsDisposed)
-                {
-                    laserSound.Stop(true);
-                    laserSound.Dispose();
-                }
-                bgmEffect.Dispose();
-                if (gameOverSound.State != SoundState.Playing && !gameOverSoundPlayed)
-                {
-                    gameOverSound.Play();
-                    gameOverSoundPlayed = true;
-                }
-            }
-            else
-            {
-                this.enemyGenerator.Update(gameTime);
-                this.laserPool.Update(gameTime);
-                this.explosionPool.Update(gameTime);
-            }
+            this.enemyGenerator.Update(gameTime);
+            this.laserPool.Update(gameTime);
+            this.explosionPool.Update(gameTime);
+
             this.starGenerator.Update(gameTime);
             base.Update(gameTime);
         }
@@ -278,13 +255,6 @@ namespace Starwar
                 spaceshipSprite.Draw(gameTime, spriteBatch);
             }
 
-            if (gameOver)
-            {
-                var vector2 = gameOverFont.MeasureString("Game Over");
-                var posx = (this.graphics.GraphicsDevice.Viewport.Width - vector2.X)/2;
-                var posy = (this.graphics.GraphicsDevice.Viewport.Height - vector2.Y)/2;
-                spriteBatch.DrawString(gameOverFont, "Game Over", new Vector2(posx, posy), Color.Red);
-            }
 
             enemyGenerator.Draw(gameTime, spriteBatch);
 
@@ -292,6 +262,8 @@ namespace Starwar
             laserPool.Draw(gameTime, spriteBatch);
 
             explosionPool.Draw(gameTime, spriteBatch);
+
+            this.gameOverScene.Draw(gameTime, spriteBatch);
 
             #region Output Debug Information
 #if DEBUG
@@ -342,7 +314,7 @@ namespace Starwar
                 this.bgmEffect.Dispose();
                 this.explosionSoundEffect.Dispose();
                 this.laserSoundEffect.Dispose();
-                this.gameOverSoundEffect.Dispose();
+
 
             }
             base.Dispose(disposing);
