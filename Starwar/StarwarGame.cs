@@ -1,14 +1,13 @@
-﻿using System.Runtime.InteropServices;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Media;
+﻿
 
 namespace Starwar
 {
     using System;
     using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Audio;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
-    using Sprites;
+    using Starwar.Sprites;
 
     /// <summary>
     /// This is the main type for your game.
@@ -18,6 +17,7 @@ namespace Starwar
         private const string SpaceshipContentName = "spaceship";
         private const string LaserContentName = "laser";
         private const string MessageFontContentName = "message";
+        private const string ScoreFontContentName = "scoreFont";
         private const string Enemy4ContentName = "enemy4";
         private const string ExplosionsContentName = "explosions";
         private const string BackgroundContentName = "background";
@@ -39,6 +39,7 @@ namespace Starwar
         
         // texture and content
         private SpriteFont messageFont;
+        private SpriteFont scoreFont;
         
         private Texture2D spaceshipTexture;
         private Texture2D laserTexture;
@@ -59,6 +60,7 @@ namespace Starwar
         private SpriteBatch spriteBatch;
         private SpaceshipSprite spaceshipSprite;
         private BackgroundSprite backgroundSprite;
+        private int score;
         
         public StarwarGame()
         {
@@ -99,6 +101,7 @@ namespace Starwar
 
             // load texture and contents
             messageFont = this.Content.Load<SpriteFont>(MessageFontContentName);
+            scoreFont = this.Content.Load<SpriteFont>(ScoreFontContentName);
             
             laserTexture = this.Content.Load<Texture2D>(LaserContentName);
             spaceshipTexture = this.Content.Load<Texture2D>(SpaceshipContentName);
@@ -152,7 +155,7 @@ namespace Starwar
                     laserSound.Dispose();
                 }
                 bgmEffect.Dispose();
-            }) {IsActive = true};
+            }) {IsActive = false};
 
             var bgm = bgmEffect.CreateInstance();
             bgm.IsLooped = true;
@@ -203,6 +206,7 @@ namespace Starwar
                     {
                         if (laser.CollidesWith(enemy))
                         {
+                            score += 10;
                             PlaySound(explosionSoundEffect, explosionSound);
                             laser.IsActive = false;
                             enemy.IsActive = false;
@@ -265,6 +269,10 @@ namespace Starwar
 
             this.gameOverScene.Draw(gameTime, spriteBatch);
 
+            var scoreString = string.Format("Score: {0}", this.score.ToString().PadLeft(7, '0'));
+            var scoreStringSize = scoreFont.MeasureString(scoreString);
+            spriteBatch.DrawString(scoreFont, scoreString, new Vector2(GraphicsDevice.Viewport.Width - scoreStringSize.X - 20, 5), Color.Yellow);
+
             #region Output Debug Information
 #if DEBUG
             // FPS
@@ -314,8 +322,6 @@ namespace Starwar
                 this.bgmEffect.Dispose();
                 this.explosionSoundEffect.Dispose();
                 this.laserSoundEffect.Dispose();
-
-
             }
             base.Dispose(disposing);
         }

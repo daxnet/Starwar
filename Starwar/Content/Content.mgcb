@@ -115,3 +115,9 @@
 /processorParam:TextureFormat=Compressed
 /build:gameOverFont.spritefont
 
+#begin scoreFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:scoreFont.spritefont
+
