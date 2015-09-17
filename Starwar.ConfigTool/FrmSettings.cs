@@ -24,6 +24,7 @@ namespace Starwar.ConfigTool
             this.ChkLiveForever.Checked = settings.LiveForever;
             this.ChkShowDebugInfo.Checked = settings.ShowDebugInfo;
             this.TbEnemyGenFreq.Value = settings.NumOfEnemiesPerSecond;
+            this.ChkFullScreen.Checked = settings.FullScreen;
 
             this.TbEnemyGenFreq_ValueChanged(this, EventArgs.Empty);
         }
@@ -34,7 +35,8 @@ namespace Starwar.ConfigTool
             {
                 LiveForever = ChkLiveForever.Checked,
                 ShowDebugInfo = ChkShowDebugInfo.Checked,
-                NumOfEnemiesPerSecond = TbEnemyGenFreq.Value
+                NumOfEnemiesPerSecond = TbEnemyGenFreq.Value,
+                FullScreen = ChkFullScreen.Checked
             };
             Settings.SaveSettings(settings);
             this.DialogResult = DialogResult.OK;

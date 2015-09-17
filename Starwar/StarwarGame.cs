@@ -82,7 +82,7 @@ namespace Starwar
         /// </summary>
         protected override void Initialize()
         {
-            graphics.IsFullScreen = false;
+            graphics.IsFullScreen = settings.FullScreen;
             //graphics.PreferredBackBufferWidth = 1024;
             //graphics.PreferredBackBufferHeight = 768;
             graphics.ApplyChanges();
@@ -255,14 +255,13 @@ namespace Starwar
             //this.explosionSprite.Draw(gameTime, spriteBatch);
             backgroundSprite.Draw(gameTime, spriteBatch);
             starGenerator.Draw(gameTime, spriteBatch);
+
+            enemyGenerator.Draw(gameTime, spriteBatch);
+
             if (spaceshipSprite.IsActive)
             {
                 spaceshipSprite.Draw(gameTime, spriteBatch);
             }
-
-
-            enemyGenerator.Draw(gameTime, spriteBatch);
-
             
             laserPool.Draw(gameTime, spriteBatch);
 

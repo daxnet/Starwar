@@ -13,11 +13,14 @@
         public bool ShowDebugInfo { get; set; }
         public bool LiveForever { get; set; }
 
+        public bool FullScreen { get; set; }
+
         public static readonly Settings Default = new Settings
         {
             LiveForever = false,
             NumOfEnemiesPerSecond = 2,
-            ShowDebugInfo = false
+            ShowDebugInfo = false,
+            FullScreen = false
         };
 
         private static string SettingsFile

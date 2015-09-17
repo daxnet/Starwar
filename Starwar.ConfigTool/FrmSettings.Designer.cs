@@ -39,6 +39,7 @@
             this.ChkShowDebugInfo = new System.Windows.Forms.CheckBox();
             this.BtnOK = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
+            this.ChkFullScreen = new System.Windows.Forms.CheckBox();
             this.TabControl.SuspendLayout();
             this.TpGeneral.SuspendLayout();
             this.GrpEnemyGenerationFreq.SuspendLayout();
@@ -61,6 +62,7 @@
             // 
             // TpGeneral
             // 
+            this.TpGeneral.Controls.Add(this.ChkFullScreen);
             this.TpGeneral.Controls.Add(this.GrpEnemyGenerationFreq);
             this.TpGeneral.Controls.Add(this.ChkLiveForever);
             this.TpGeneral.Location = new System.Drawing.Point(4, 22);
@@ -77,7 +79,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GrpEnemyGenerationFreq.Controls.Add(this.LblEnemyGenFreq);
             this.GrpEnemyGenerationFreq.Controls.Add(this.TbEnemyGenFreq);
-            this.GrpEnemyGenerationFreq.Location = new System.Drawing.Point(6, 28);
+            this.GrpEnemyGenerationFreq.Location = new System.Drawing.Point(6, 38);
             this.GrpEnemyGenerationFreq.Name = "GrpEnemyGenerationFreq";
             this.GrpEnemyGenerationFreq.Size = new System.Drawing.Size(287, 92);
             this.GrpEnemyGenerationFreq.TabIndex = 2;
@@ -110,7 +112,7 @@
             // ChkLiveForever
             // 
             this.ChkLiveForever.AutoSize = true;
-            this.ChkLiveForever.Location = new System.Drawing.Point(6, 6);
+            this.ChkLiveForever.Location = new System.Drawing.Point(6, 11);
             this.ChkLiveForever.Name = "ChkLiveForever";
             this.ChkLiveForever.Size = new System.Drawing.Size(72, 16);
             this.ChkLiveForever.TabIndex = 1;
@@ -162,6 +164,16 @@
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
+            // ChkFullScreen
+            // 
+            this.ChkFullScreen.AutoSize = true;
+            this.ChkFullScreen.Location = new System.Drawing.Point(147, 11);
+            this.ChkFullScreen.Name = "ChkFullScreen";
+            this.ChkFullScreen.Size = new System.Drawing.Size(72, 16);
+            this.ChkFullScreen.TabIndex = 3;
+            this.ChkFullScreen.Text = "全屏模式";
+            this.ChkFullScreen.UseVisualStyleBackColor = true;
+            // 
             // FrmSettings
             // 
             this.AcceptButton = this.BtnOK;
@@ -202,6 +214,7 @@
         private System.Windows.Forms.GroupBox GrpEnemyGenerationFreq;
         private System.Windows.Forms.Label LblEnemyGenFreq;
         private System.Windows.Forms.TrackBar TbEnemyGenFreq;
+        private System.Windows.Forms.CheckBox ChkFullScreen;
 
     }
 }
