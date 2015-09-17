@@ -74,6 +74,12 @@
   <ItemGroup>
     <Content Include="spaceship.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Starwar.Common\Starwar.Common.csproj">
+      <Project>{a34685bc-9f92-41d5-8f18-562412c540d4}</Project>
+      <Name>Starwar.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <!-- Specify the search path explicitly so the ResolveAssemblyReferences task picks the right ones -->
   <Target Name="BeforeResolveReferences">
     <CreateProperty Value="$(MSBuildProgramFiles32)\MonoGame\v3.0\Assemblies\Windows;$(AssemblySearchPaths)">

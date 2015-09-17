@@ -3,6 +3,7 @@
 namespace Starwar
 {
     using System;
+    using Common;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Audio;
     using Microsoft.Xna.Framework.Graphics;
@@ -26,8 +27,6 @@ namespace Starwar
         private const string ExplosionSoundContentName = "explosionSound";
         private const string LaserSoundContentName = "laserSound";
         
-
-
         private readonly GraphicsDeviceManager graphics;
         private readonly FrameCounter frameCounter = new FrameCounter();
         private readonly SpritePool<LaserSprite> laserPool;
@@ -50,7 +49,6 @@ namespace Starwar
         private SoundEffect bgmEffect;
         private SoundEffect explosionSoundEffect;
         private SoundEffect laserSoundEffect;
-        
 
         private SoundEffectInstance laserSound;
         private SoundEffectInstance explosionSound;
@@ -60,7 +58,10 @@ namespace Starwar
         private SpriteBatch spriteBatch;
         private SpaceshipSprite spaceshipSprite;
         private BackgroundSprite backgroundSprite;
+
         private int score;
+
+        private readonly Settings settings;
         
         public StarwarGame()
         {
@@ -70,7 +71,7 @@ namespace Starwar
             enemyPool = new SpritePool<EnemySprite>(graphics);
             explosionPool = new SpritePool<AnimatedSprite>(graphics);
             starPool = new SpritePool<ParallaxStarSprite>(graphics);
-            
+            settings = Settings.ReadSettings();
         }
 
         /// <summary>
@@ -128,7 +129,7 @@ namespace Starwar
                     () =>
                         new EnemySprite(enemy4Texture,
                             new Vector2(Utils.GetRandomNumber(1, GraphicsDevice.Viewport.Width - enemy4Texture.Width), 1),
-                            Utils.GetRandomNumber(5, 10)), enemyPool, TimeSpan.FromMilliseconds(900));
+                            Utils.GetRandomNumber(5, 10)), enemyPool, TimeSpan.FromMilliseconds(1000.0F/settings.NumOfEnemiesPerSecond));
 
             starGenerator =
                 new SpriteGenerator<ParallaxStarSprite>(() => new ParallaxStarSprite(starTexture, new Vector2(
@@ -155,7 +156,7 @@ namespace Starwar
                     laserSound.Dispose();
                 }
                 bgmEffect.Dispose();
-            }) {IsActive = false};
+            }) {IsActive = !settings.LiveForever};
 
             var bgm = bgmEffect.CreateInstance();
             bgm.IsLooped = true;
@@ -274,35 +275,40 @@ namespace Starwar
             spriteBatch.DrawString(scoreFont, scoreString, new Vector2(GraphicsDevice.Viewport.Width - scoreStringSize.X - 20, 5), Color.Yellow);
 
             #region Output Debug Information
-#if DEBUG
-            // FPS
-            spriteBatch.DrawString(messageFont, fps, Vector2.One, Color.Yellow);
 
-            // Spacecraft Information
-            var spaceCraftInfo = string.Format("[Spacecraft] X = {0}, Y = {1}", spaceshipSprite.X, spaceshipSprite.Y);
-            spriteBatch.DrawString(messageFont, spaceCraftInfo, new Vector2(1, 15), Color.Yellow);
+            if (settings.ShowDebugInfo)
+            {
+                // FPS
+                spriteBatch.DrawString(messageFont, fps, Vector2.One, Color.Yellow);
 
-            // Laser Pool Information
-            var laserPoolCountStr = string.Format("[Laser Pool] Count = {0}", this.laserPool.Count);
-            spriteBatch.DrawString(messageFont, laserPoolCountStr, new Vector2(1, 30), Color.Yellow);
+                // Spacecraft Information
+                var spaceCraftInfo = string.Format("[Spacecraft] X = {0}, Y = {1}", spaceshipSprite.X, spaceshipSprite.Y);
+                spriteBatch.DrawString(messageFont, spaceCraftInfo, new Vector2(1, 15), Color.Yellow);
 
-            // Enemy Pool Information
-            var enemyPoolCountStr = string.Format("[Enemy Pool] Count = {0}", this.enemyPool.Count);
-            spriteBatch.DrawString(messageFont, enemyPoolCountStr, new Vector2(1, 45), Color.Yellow);
+                // Laser Pool Information
+                var laserPoolCountStr = string.Format("[Laser Pool] Count = {0}", this.laserPool.Count);
+                spriteBatch.DrawString(messageFont, laserPoolCountStr, new Vector2(1, 30), Color.Yellow);
 
-            // Explosion Pool Information
-            var explPoolCountStr = string.Format("[Expln Pool] Count = {0}", this.explosionPool.Count);
-            spriteBatch.DrawString(messageFont, explPoolCountStr, new Vector2(1, 60), Color.Yellow);
+                // Enemy Pool Information
+                var enemyPoolCountStr = string.Format("[Enemy Pool] Count = {0}", this.enemyPool.Count);
+                spriteBatch.DrawString(messageFont, enemyPoolCountStr, new Vector2(1, 45), Color.Yellow);
 
-            // Viewport Information
-            var viewportInfoStr = string.Format("[ Viewport ] Width = {0}, Height = {1}", GraphicsDevice.Viewport.Width,
-                GraphicsDevice.Viewport.Height);
-            spriteBatch.DrawString(messageFont, viewportInfoStr, new Vector2(1, 75), Color.Yellow);
+                // Explosion Pool Information
+                var explPoolCountStr = string.Format("[Expln Pool] Count = {0}", this.explosionPool.Count);
+                spriteBatch.DrawString(messageFont, explPoolCountStr, new Vector2(1, 60), Color.Yellow);
 
-            // Game time Information
-            var gameTimeInfoStr = string.Format("[ GameTime ] Total = {0}", gameTime.TotalGameTime);
-            spriteBatch.DrawString(messageFont, gameTimeInfoStr, new Vector2(1, 90), Color.Yellow);
-#endif
+                // Viewport Information
+                var viewportInfoStr = string.Format("[ Viewport ] Width = {0}, Height = {1}",
+                    GraphicsDevice.Viewport.Width,
+                    GraphicsDevice.Viewport.Height);
+                spriteBatch.DrawString(messageFont, viewportInfoStr, new Vector2(1, 75), Color.Yellow);
+
+                // Game time Information
+                var gameTimeInfoStr = string.Format("[ GameTime ] Total = {0}", gameTime.TotalGameTime);
+                spriteBatch.DrawString(messageFont, gameTimeInfoStr, new Vector2(1, 90), Color.Yellow);
+            }
+
+
             #endregion
 
             spriteBatch.End();
