@@ -10,6 +10,9 @@
         private const string SettingsFileName = "settings.json";
 
         public int NumOfEnemiesPerSecond { get; set; }
+
+        public int NumOfLasersPerSecond { get; set; }
+
         public bool ShowDebugInfo { get; set; }
         public bool LiveForever { get; set; }
 
@@ -19,6 +22,7 @@
         {
             LiveForever = false,
             NumOfEnemiesPerSecond = 2,
+            NumOfLasersPerSecond = 10,
             ShowDebugInfo = false,
             FullScreen = false
         };
@@ -42,6 +46,11 @@
                     if (readSettings.NumOfEnemiesPerSecond < 1)
                     {
                         readSettings.NumOfEnemiesPerSecond = Default.NumOfEnemiesPerSecond;
+                    }
+
+                    if (readSettings.NumOfLasersPerSecond < 8)
+                    {
+                        readSettings.NumOfLasersPerSecond = Default.NumOfLasersPerSecond;
                     }
                     return readSettings;
                 }

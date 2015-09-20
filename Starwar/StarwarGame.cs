@@ -33,6 +33,7 @@ namespace Starwar
         private readonly SpritePool<EnemySprite> enemyPool;
         private readonly SpritePool<AnimatedSprite> explosionPool;
         private readonly SpritePool<ParallaxStarSprite> starPool;
+        private readonly TimeSpan laserUpdateThreshold;
         private SpriteGenerator<EnemySprite> enemyGenerator;
         private SpriteGenerator<ParallaxStarSprite> starGenerator;
         
@@ -53,6 +54,7 @@ namespace Starwar
         private SoundEffectInstance laserSound;
         private SoundEffectInstance explosionSound;
         private GameOverScene gameOverScene;
+        private TimeSpan currentLaserUpdateTimeSpan = TimeSpan.Zero;
 
         // sprites
         private SpriteBatch spriteBatch;
@@ -72,6 +74,8 @@ namespace Starwar
             explosionPool = new SpritePool<AnimatedSprite>(graphics);
             starPool = new SpritePool<ParallaxStarSprite>(graphics);
             settings = Settings.ReadSettings();
+
+            laserUpdateThreshold = TimeSpan.FromMilliseconds(1000.0F/settings.NumOfLasersPerSecond);
         }
 
         /// <summary>
@@ -194,11 +198,16 @@ namespace Starwar
 
                 if (mouseState.LeftButton == ButtonState.Pressed)
                 {
-                    var laserSprite = new LaserSprite(laserTexture,
-                        new Vector2(spaceshipSprite.X + (spaceshipSprite.Width - laserTexture.Width)/2.0F,
-                            spaceshipSprite.Y));
-                    PlaySound(laserSoundEffect, laserSound);
-                    this.laserPool.Add(laserSprite);
+                    this.currentLaserUpdateTimeSpan += gameTime.ElapsedGameTime;
+                    if (this.currentLaserUpdateTimeSpan >= laserUpdateThreshold)
+                    {
+                        var laserSprite = new LaserSprite(laserTexture,
+                            new Vector2(spaceshipSprite.X + (spaceshipSprite.Width - laserTexture.Width)/2.0F,
+                                spaceshipSprite.Y));
+                        PlaySound(laserSoundEffect, laserSound);
+                        this.laserPool.Add(laserSprite);
+                        this.currentLaserUpdateTimeSpan = TimeSpan.Zero;
+                    }
                 }
 
                 foreach (var enemy in this.enemyPool.Sprites)

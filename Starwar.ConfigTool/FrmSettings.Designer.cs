@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSettings));
             this.TabControl = new System.Windows.Forms.TabControl();
             this.TpGeneral = new System.Windows.Forms.TabPage();
+            this.GrpLaserGenFreq = new System.Windows.Forms.GroupBox();
+            this.LblLaserGenFreq = new System.Windows.Forms.Label();
+            this.TbLaserGenFreq = new System.Windows.Forms.TrackBar();
+            this.ChkFullScreen = new System.Windows.Forms.CheckBox();
             this.GrpEnemyGenerationFreq = new System.Windows.Forms.GroupBox();
             this.LblEnemyGenFreq = new System.Windows.Forms.Label();
             this.TbEnemyGenFreq = new System.Windows.Forms.TrackBar();
@@ -39,9 +43,10 @@
             this.ChkShowDebugInfo = new System.Windows.Forms.CheckBox();
             this.BtnOK = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
-            this.ChkFullScreen = new System.Windows.Forms.CheckBox();
             this.TabControl.SuspendLayout();
             this.TpGeneral.SuspendLayout();
+            this.GrpLaserGenFreq.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TbLaserGenFreq)).BeginInit();
             this.GrpEnemyGenerationFreq.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TbEnemyGenFreq)).BeginInit();
             this.TpDevelopment.SuspendLayout();
@@ -57,21 +62,68 @@
             this.TabControl.Location = new System.Drawing.Point(12, 12);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(307, 329);
+            this.TabControl.Size = new System.Drawing.Size(342, 409);
             this.TabControl.TabIndex = 0;
             // 
             // TpGeneral
             // 
+            this.TpGeneral.Controls.Add(this.GrpLaserGenFreq);
             this.TpGeneral.Controls.Add(this.ChkFullScreen);
             this.TpGeneral.Controls.Add(this.GrpEnemyGenerationFreq);
             this.TpGeneral.Controls.Add(this.ChkLiveForever);
             this.TpGeneral.Location = new System.Drawing.Point(4, 22);
             this.TpGeneral.Name = "TpGeneral";
             this.TpGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.TpGeneral.Size = new System.Drawing.Size(299, 303);
+            this.TpGeneral.Size = new System.Drawing.Size(334, 383);
             this.TpGeneral.TabIndex = 0;
             this.TpGeneral.Text = "通用";
             this.TpGeneral.UseVisualStyleBackColor = true;
+            // 
+            // GrpLaserGenFreq
+            // 
+            this.GrpLaserGenFreq.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GrpLaserGenFreq.Controls.Add(this.LblLaserGenFreq);
+            this.GrpLaserGenFreq.Controls.Add(this.TbLaserGenFreq);
+            this.GrpLaserGenFreq.Location = new System.Drawing.Point(6, 146);
+            this.GrpLaserGenFreq.Name = "GrpLaserGenFreq";
+            this.GrpLaserGenFreq.Size = new System.Drawing.Size(322, 100);
+            this.GrpLaserGenFreq.TabIndex = 4;
+            this.GrpLaserGenFreq.TabStop = false;
+            this.GrpLaserGenFreq.Text = "子弹发射频率";
+            // 
+            // LblLaserGenFreq
+            // 
+            this.LblLaserGenFreq.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblLaserGenFreq.AutoSize = true;
+            this.LblLaserGenFreq.Location = new System.Drawing.Point(269, 68);
+            this.LblLaserGenFreq.Name = "LblLaserGenFreq";
+            this.LblLaserGenFreq.Size = new System.Drawing.Size(47, 12);
+            this.LblLaserGenFreq.TabIndex = 2;
+            this.LblLaserGenFreq.Text = "0 发/秒";
+            // 
+            // TbLaserGenFreq
+            // 
+            this.TbLaserGenFreq.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TbLaserGenFreq.Location = new System.Drawing.Point(6, 20);
+            this.TbLaserGenFreq.Maximum = 80;
+            this.TbLaserGenFreq.Minimum = 8;
+            this.TbLaserGenFreq.Name = "TbLaserGenFreq";
+            this.TbLaserGenFreq.Size = new System.Drawing.Size(310, 45);
+            this.TbLaserGenFreq.TabIndex = 1;
+            this.TbLaserGenFreq.Value = 8;
+            this.TbLaserGenFreq.ValueChanged += new System.EventHandler(this.TbLaserGenFreq_ValueChanged);
+            // 
+            // ChkFullScreen
+            // 
+            this.ChkFullScreen.AutoSize = true;
+            this.ChkFullScreen.Location = new System.Drawing.Point(147, 11);
+            this.ChkFullScreen.Name = "ChkFullScreen";
+            this.ChkFullScreen.Size = new System.Drawing.Size(72, 16);
+            this.ChkFullScreen.TabIndex = 3;
+            this.ChkFullScreen.Text = "全屏模式";
+            this.ChkFullScreen.UseVisualStyleBackColor = true;
             // 
             // GrpEnemyGenerationFreq
             // 
@@ -81,7 +133,7 @@
             this.GrpEnemyGenerationFreq.Controls.Add(this.TbEnemyGenFreq);
             this.GrpEnemyGenerationFreq.Location = new System.Drawing.Point(6, 38);
             this.GrpEnemyGenerationFreq.Name = "GrpEnemyGenerationFreq";
-            this.GrpEnemyGenerationFreq.Size = new System.Drawing.Size(287, 92);
+            this.GrpEnemyGenerationFreq.Size = new System.Drawing.Size(322, 92);
             this.GrpEnemyGenerationFreq.TabIndex = 2;
             this.GrpEnemyGenerationFreq.TabStop = false;
             this.GrpEnemyGenerationFreq.Text = "敌机产生频率";
@@ -90,7 +142,7 @@
             // 
             this.LblEnemyGenFreq.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblEnemyGenFreq.AutoSize = true;
-            this.LblEnemyGenFreq.Location = new System.Drawing.Point(234, 68);
+            this.LblEnemyGenFreq.Location = new System.Drawing.Point(269, 68);
             this.LblEnemyGenFreq.Name = "LblEnemyGenFreq";
             this.LblEnemyGenFreq.Size = new System.Drawing.Size(47, 12);
             this.LblEnemyGenFreq.TabIndex = 1;
@@ -104,7 +156,7 @@
             this.TbEnemyGenFreq.Maximum = 15;
             this.TbEnemyGenFreq.Minimum = 1;
             this.TbEnemyGenFreq.Name = "TbEnemyGenFreq";
-            this.TbEnemyGenFreq.Size = new System.Drawing.Size(275, 45);
+            this.TbEnemyGenFreq.Size = new System.Drawing.Size(310, 45);
             this.TbEnemyGenFreq.TabIndex = 0;
             this.TbEnemyGenFreq.Value = 1;
             this.TbEnemyGenFreq.ValueChanged += new System.EventHandler(this.TbEnemyGenFreq_ValueChanged);
@@ -125,7 +177,7 @@
             this.TpDevelopment.Location = new System.Drawing.Point(4, 22);
             this.TpDevelopment.Name = "TpDevelopment";
             this.TpDevelopment.Padding = new System.Windows.Forms.Padding(3);
-            this.TpDevelopment.Size = new System.Drawing.Size(299, 303);
+            this.TpDevelopment.Size = new System.Drawing.Size(334, 383);
             this.TpDevelopment.TabIndex = 1;
             this.TpDevelopment.Text = "开发";
             this.TpDevelopment.UseVisualStyleBackColor = true;
@@ -144,7 +196,7 @@
             // 
             this.BtnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnOK.Location = new System.Drawing.Point(163, 347);
+            this.BtnOK.Location = new System.Drawing.Point(198, 427);
             this.BtnOK.Name = "BtnOK";
             this.BtnOK.Size = new System.Drawing.Size(75, 23);
             this.BtnOK.TabIndex = 1;
@@ -156,7 +208,7 @@
             // 
             this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnCancel.Location = new System.Drawing.Point(244, 347);
+            this.BtnCancel.Location = new System.Drawing.Point(279, 427);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
             this.BtnCancel.TabIndex = 2;
@@ -164,23 +216,13 @@
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // ChkFullScreen
-            // 
-            this.ChkFullScreen.AutoSize = true;
-            this.ChkFullScreen.Location = new System.Drawing.Point(147, 11);
-            this.ChkFullScreen.Name = "ChkFullScreen";
-            this.ChkFullScreen.Size = new System.Drawing.Size(72, 16);
-            this.ChkFullScreen.TabIndex = 3;
-            this.ChkFullScreen.Text = "全屏模式";
-            this.ChkFullScreen.UseVisualStyleBackColor = true;
-            // 
             // FrmSettings
             // 
             this.AcceptButton = this.BtnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnCancel;
-            this.ClientSize = new System.Drawing.Size(331, 382);
+            this.ClientSize = new System.Drawing.Size(366, 462);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnOK);
             this.Controls.Add(this.TabControl);
@@ -193,6 +235,9 @@
             this.TabControl.ResumeLayout(false);
             this.TpGeneral.ResumeLayout(false);
             this.TpGeneral.PerformLayout();
+            this.GrpLaserGenFreq.ResumeLayout(false);
+            this.GrpLaserGenFreq.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TbLaserGenFreq)).EndInit();
             this.GrpEnemyGenerationFreq.ResumeLayout(false);
             this.GrpEnemyGenerationFreq.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TbEnemyGenFreq)).EndInit();
@@ -215,6 +260,9 @@
         private System.Windows.Forms.Label LblEnemyGenFreq;
         private System.Windows.Forms.TrackBar TbEnemyGenFreq;
         private System.Windows.Forms.CheckBox ChkFullScreen;
+        private System.Windows.Forms.GroupBox GrpLaserGenFreq;
+        private System.Windows.Forms.Label LblLaserGenFreq;
+        private System.Windows.Forms.TrackBar TbLaserGenFreq;
 
     }
 }

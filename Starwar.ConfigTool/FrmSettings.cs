@@ -25,8 +25,10 @@ namespace Starwar.ConfigTool
             this.ChkShowDebugInfo.Checked = settings.ShowDebugInfo;
             this.TbEnemyGenFreq.Value = settings.NumOfEnemiesPerSecond;
             this.ChkFullScreen.Checked = settings.FullScreen;
+            this.TbLaserGenFreq.Value = settings.NumOfLasersPerSecond;
 
             this.TbEnemyGenFreq_ValueChanged(this, EventArgs.Empty);
+            this.TbLaserGenFreq_ValueChanged(this, EventArgs.Empty);
         }
 
         private void BtnOK_Click(object sender, EventArgs e)
@@ -36,7 +38,8 @@ namespace Starwar.ConfigTool
                 LiveForever = ChkLiveForever.Checked,
                 ShowDebugInfo = ChkShowDebugInfo.Checked,
                 NumOfEnemiesPerSecond = TbEnemyGenFreq.Value,
-                FullScreen = ChkFullScreen.Checked
+                FullScreen = ChkFullScreen.Checked,
+                NumOfLasersPerSecond = TbLaserGenFreq.Value
             };
             Settings.SaveSettings(settings);
             this.DialogResult = DialogResult.OK;
@@ -51,6 +54,11 @@ namespace Starwar.ConfigTool
         private void TbEnemyGenFreq_ValueChanged(object sender, EventArgs e)
         {
             LblEnemyGenFreq.Text = string.Format("{0} 架/秒", TbEnemyGenFreq.Value);
+        }
+
+        private void TbLaserGenFreq_ValueChanged(object sender, EventArgs e)
+        {
+            LblLaserGenFreq.Text = string.Format("{0} 发/秒", TbLaserGenFreq.Value);
         }
     }
 }
