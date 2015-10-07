@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using Starwar.Common;
 
 namespace Starwar.ConfigTool
 {
-    using Common;
-
     public partial class FrmSettings : Form
     {
         public FrmSettings()
@@ -27,6 +21,17 @@ namespace Starwar.ConfigTool
             this.ChkFullScreen.Checked = settings.FullScreen;
             this.TbLaserGenFreq.Value = settings.NumOfLasersPerSecond;
 
+            this.CbBackgroundMusic.DataSource = BackgroundMusicItem.All;
+            if (!string.IsNullOrEmpty(settings.BgmSoundEffect))
+            {
+                this.CbBackgroundMusic.SelectedItem =
+                    BackgroundMusicItem.All.First(i => i.SoundEffect == settings.BgmSoundEffect);
+            }
+            else
+            {
+                this.CbBackgroundMusic.SelectedIndex = 0;
+            }
+
             this.TbEnemyGenFreq_ValueChanged(this, EventArgs.Empty);
             this.TbLaserGenFreq_ValueChanged(this, EventArgs.Empty);
         }
@@ -39,7 +44,8 @@ namespace Starwar.ConfigTool
                 ShowDebugInfo = ChkShowDebugInfo.Checked,
                 NumOfEnemiesPerSecond = TbEnemyGenFreq.Value,
                 FullScreen = ChkFullScreen.Checked,
-                NumOfLasersPerSecond = TbLaserGenFreq.Value
+                NumOfLasersPerSecond = TbLaserGenFreq.Value,
+                BgmSoundEffect = ((BackgroundMusicItem)CbBackgroundMusic.SelectedItem).SoundEffect
             };
             Settings.SaveSettings(settings);
             this.DialogResult = DialogResult.OK;

@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackgroundMusicItem.cs" />
     <Compile Include="FrmSettings.cs">
       <SubType>Form</SubType>
     </Compile>

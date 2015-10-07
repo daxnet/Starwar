@@ -18,13 +18,16 @@
 
         public bool FullScreen { get; set; }
 
+        public string BgmSoundEffect { get; set; }
+
         public static readonly Settings Default = new Settings
         {
             LiveForever = false,
             NumOfEnemiesPerSecond = 2,
             NumOfLasersPerSecond = 10,
             ShowDebugInfo = false,
-            FullScreen = false
+            FullScreen = false,
+            BgmSoundEffect = "bgm"
         };
 
         private static string SettingsFile
@@ -51,6 +54,11 @@
                     if (readSettings.NumOfLasersPerSecond < 8)
                     {
                         readSettings.NumOfLasersPerSecond = Default.NumOfLasersPerSecond;
+                    }
+
+                    if (string.IsNullOrEmpty(readSettings.BgmSoundEffect))
+                    {
+                        readSettings.BgmSoundEffect = Default.BgmSoundEffect;
                     }
                     return readSettings;
                 }

@@ -23,7 +23,7 @@ namespace Starwar
         private const string ExplosionsContentName = "explosions";
         private const string BackgroundContentName = "background";
         private const string ParallaxStarContentName = "stars";
-        private const string BgmContentName = "bgm";
+        // private const string BgmContentName = "bgm";
         private const string ExplosionSoundContentName = "explosionSound";
         private const string LaserSoundContentName = "laserSound";
         
@@ -114,7 +114,8 @@ namespace Starwar
             explosionTexture = this.Content.Load<Texture2D>(ExplosionsContentName);
             backgroundTexture = this.Content.Load<Texture2D>(BackgroundContentName);
             starTexture = this.Content.Load<Texture2D>(ParallaxStarContentName);
-            bgmEffect = this.Content.Load<SoundEffect>(BgmContentName);
+            //bgmEffect = this.Content.Load<SoundEffect>(BgmContentName);
+            bgmEffect = this.Content.Load<SoundEffect>(this.settings.BgmSoundEffect);
             explosionSoundEffect = this.Content.Load<SoundEffect>(ExplosionSoundContentName);
             explosionSound = explosionSoundEffect.CreateInstance();
             explosionSound.Volume = 1.0F;
