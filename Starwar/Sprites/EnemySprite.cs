@@ -15,8 +15,8 @@ namespace Starwar.Sprites
 
         private const string Script = @"
     function CalculatePosition(initX, initY, x, y, speed)
-        -- return initX + math.sin(y / 100.0) * 100, y + speed
-        return x, y + speed
+        return initX + math.sin(y / 100.0) * 100, y + speed
+        -- return x, y + speed
     end
 ";
 
@@ -30,6 +30,7 @@ namespace Starwar.Sprites
 
         public override void Update(GameTime gameTime)
         {
+
             // this.Y += speed;
             // var function = state["CalculatePosition"] as LuaFunction;
             var result = luaFunction.Call(this.initPos.X, this.initPos.Y, this.X, this.Y, speed);
