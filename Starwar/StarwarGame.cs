@@ -87,12 +87,15 @@ namespace Starwar
         protected override void Initialize()
         {
             graphics.IsFullScreen = settings.FullScreen;
+            graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
+            graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
             //graphics.PreferredBackBufferWidth = 1024;
             //graphics.PreferredBackBufferHeight = 768;
             graphics.ApplyChanges();
             base.Initialize();
+            //graphics.ToggleFullScreen();
             Window.AllowUserResizing = true;
-            
+            graphics.ApplyChanges();
         }
 
         /// <summary>

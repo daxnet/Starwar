@@ -16,18 +16,24 @@
         "Entry"
         {
         "MsmKey" = "8:_0ED8A9772E8F6E065E91C8608300515E"
-        "OwnerKey" = "8:_8165A2444FFD4AD1AEA8E737233BF327"
+        "OwnerKey" = "8:_6CEAA608AFFC425AABD6EF728FF4EB6B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_0ED8A9772E8F6E065E91C8608300515E"
-        "OwnerKey" = "8:_868C74EDA50D49D4A4624EA6BE032E4E"
+        "OwnerKey" = "8:_28EC04CBA0F44BD291C56589D4E1A93C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_190F81C6F4E244A78FAC36AC0791F131"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_28EC04CBA0F44BD291C56589D4E1A93C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -39,8 +45,38 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_43A518744F734547A1207E7B533883A4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_477F14C7032E4332923CC7E39472026F"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_485087E2781C0DC8B366909F9F0FD22D"
+        "OwnerKey" = "8:_6CEAA608AFFC425AABD6EF728FF4EB6B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_485087E2781C0DC8B366909F9F0FD22D"
+        "OwnerKey" = "8:_75482A7C8EA630FAEE43E503187E7E34"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4D66BDB12615F14711625AF25798CC6D"
+        "OwnerKey" = "8:_6428179C56F021AFF843ED92E88658D1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4D66BDB12615F14711625AF25798CC6D"
+        "OwnerKey" = "8:_6CEAA608AFFC425AABD6EF728FF4EB6B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -52,6 +88,18 @@
         "Entry"
         {
         "MsmKey" = "8:_639308CBC0CE4551A929D4FDD3ABBAFA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6428179C56F021AFF843ED92E88658D1"
+        "OwnerKey" = "8:_6CEAA608AFFC425AABD6EF728FF4EB6B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6CEAA608AFFC425AABD6EF728FF4EB6B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -69,14 +117,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8165A2444FFD4AD1AEA8E737233BF327"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_868C74EDA50D49D4A4624EA6BE032E4E"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_75482A7C8EA630FAEE43E503187E7E34"
+        "OwnerKey" = "8:_6CEAA608AFFC425AABD6EF728FF4EB6B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -93,20 +135,26 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9A46C6C6AF84AEDE5A9E85B28B4FB95D"
+        "OwnerKey" = "8:_6CEAA608AFFC425AABD6EF728FF4EB6B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9A46C6C6AF84AEDE5A9E85B28B4FB95D"
+        "OwnerKey" = "8:_28EC04CBA0F44BD291C56589D4E1A93C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9A46C6C6AF84AEDE5A9E85B28B4FB95D"
+        "OwnerKey" = "8:_0ED8A9772E8F6E065E91C8608300515E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_9BF6827F37F447BDBFF233EFFBF8F4FF"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B02D865BDA7366A10CFDC29711860027"
-        "OwnerKey" = "8:_D4B582F77DD01A2534518E94A8675ABE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B02D865BDA7366A10CFDC29711860027"
-        "OwnerKey" = "8:_868C74EDA50D49D4A4624EA6BE032E4E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -129,13 +177,25 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D4B582F77DD01A2534518E94A8675ABE"
-        "OwnerKey" = "8:_868C74EDA50D49D4A4624EA6BE032E4E"
+        "MsmKey" = "8:_DCA9CD534F3F6E320CEE199D809D4DFD"
+        "OwnerKey" = "8:_6428179C56F021AFF843ED92E88658D1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DCA9CD534F3F6E320CEE199D809D4DFD"
+        "OwnerKey" = "8:_6CEAA608AFFC425AABD6EF728FF4EB6B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_DE3B11F803B84A5D8793AE29405A7EA7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E596CC38B2DE4DEFB64DC1FA525CA873"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -147,32 +207,62 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_868C74EDA50D49D4A4624EA6BE032E4E"
+        "MsmKey" = "8:_ED459CBB11994A49B00F10B4ED907753"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D4B582F77DD01A2534518E94A8675ABE"
+        "OwnerKey" = "8:_DCA9CD534F3F6E320CEE199D809D4DFD"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B02D865BDA7366A10CFDC29711860027"
+        "OwnerKey" = "8:_28EC04CBA0F44BD291C56589D4E1A93C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8165A2444FFD4AD1AEA8E737233BF327"
+        "OwnerKey" = "8:_6CEAA608AFFC425AABD6EF728FF4EB6B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_0ED8A9772E8F6E065E91C8608300515E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9A46C6C6AF84AEDE5A9E85B28B4FB95D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_75482A7C8EA630FAEE43E503187E7E34"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_485087E2781C0DC8B366909F9F0FD22D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_6428179C56F021AFF843ED92E88658D1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4D66BDB12615F14711625AF25798CC6D"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -200,6 +290,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
         "Release"
@@ -224,6 +322,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
     }
@@ -260,7 +366,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.0"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.6.1"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=395269"
                 }
@@ -339,6 +445,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_43A518744F734547A1207E7B533883A4"
+            {
+            "SourcePath" = "8:..\\Starwar\\bin\\WindowsGL\\Release\\x86\\lua52.dll"
+            "TargetName" = "8:lua52.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_35F284540AAB411B9C584FA67DAF87B3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_477F14C7032E4332923CC7E39472026F"
             {
             "SourcePath" = "8:..\\Starwar\\bin\\WindowsGL\\Release\\Content\\gameOver.xnb"
@@ -357,6 +483,68 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_485087E2781C0DC8B366909F9F0FD22D"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:KeraLua, Version=1.3.2.0, Culture=neutral, PublicKeyToken=04d04586786c6f34, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_485087E2781C0DC8B366909F9F0FD22D"
+                    {
+                    "Name" = "8:KeraLua.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:KeraLua.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_8B43B83672B4412CBB2B23F4EB70B3DF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4D66BDB12615F14711625AF25798CC6D"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_4D66BDB12615F14711625AF25798CC6D"
+                    {
+                    "Name" = "8:OpenTK.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:OpenTK.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_8B43B83672B4412CBB2B23F4EB70B3DF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_59FB8665BA574772B455871F93F068B4"
@@ -399,6 +587,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6428179C56F021AFF843ED92E88658D1"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MonoGame.Framework, Version=3.5.1.1679, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_6428179C56F021AFF843ED92E88658D1"
+                    {
+                    "Name" = "8:MonoGame.Framework.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:MonoGame.Framework.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_8B43B83672B4412CBB2B23F4EB70B3DF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6EDC1253720D49FDAE86E3A291D010C2"
             {
             "SourcePath" = "8:..\\Starwar\\bin\\WindowsGL\\Release\\Content\\laser.xnb"
@@ -437,6 +656,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_75482A7C8EA630FAEE43E503187E7E34"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:NLua, Version=1.3.2.0, Culture=neutral, PublicKeyToken=8df2ab518030ea95, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_75482A7C8EA630FAEE43E503187E7E34"
+                    {
+                    "Name" = "8:NLua.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:NLua.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_8B43B83672B4412CBB2B23F4EB70B3DF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8C0E3CACF6544FC49E1F3E91675D2570"
@@ -479,6 +729,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9A46C6C6AF84AEDE5A9E85B28B4FB95D"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_9A46C6C6AF84AEDE5A9E85B28B4FB95D"
+                    {
+                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Newtonsoft.Json.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_8B43B83672B4412CBB2B23F4EB70B3DF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9BF6827F37F447BDBFF233EFFBF8F4FF"
             {
             "SourcePath" = "8:..\\res\\settings.json"
@@ -497,37 +778,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B02D865BDA7366A10CFDC29711860027"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_B02D865BDA7366A10CFDC29711860027"
-                    {
-                    "Name" = "8:OpenTK.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:OpenTK.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_8B43B83672B4412CBB2B23F4EB70B3DF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B4D8436699964B26A1F5000840D7DBD9"
@@ -590,20 +840,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D4B582F77DD01A2534518E94A8675ABE"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DCA9CD534F3F6E320CEE199D809D4DFD"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:MonoGame.Framework, Version=3.4.0.456, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:NVorbis, Version=0.8.4.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_D4B582F77DD01A2534518E94A8675ABE"
+                    "_DCA9CD534F3F6E320CEE199D809D4DFD"
                     {
-                    "Name" = "8:MonoGame.Framework.dll"
+                    "Name" = "8:NVorbis.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:MonoGame.Framework.dll"
+            "SourcePath" = "8:NVorbis.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8B43B83672B4412CBB2B23F4EB70B3DF"
@@ -641,10 +891,50 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E596CC38B2DE4DEFB64DC1FA525CA873"
+            {
+            "SourcePath" = "8:..\\Starwar\\bin\\WindowsGL\\Release\\Content\\FightOfFate.xnb"
+            "TargetName" = "8:FightOfFate.xnb"
+            "Tag" = "8:"
+            "Folder" = "8:_C24D18896BF1413CB16B5039737EC19A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E7A0EF43FEB343F4903746D95DD53B43"
             {
             "SourcePath" = "8:..\\Starwar\\bin\\WindowsGL\\Release\\Content\\stars.xnb"
             "TargetName" = "8:stars.xnb"
+            "Tag" = "8:"
+            "Folder" = "8:_C24D18896BF1413CB16B5039737EC19A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_ED459CBB11994A49B00F10B4ED907753"
+            {
+            "SourcePath" = "8:..\\Starwar\\bin\\WindowsGL\\Release\\Content\\enemy1.xnb"
+            "TargetName" = "8:enemy1.xnb"
             "Tag" = "8:"
             "Folder" = "8:_C24D18896BF1413CB16B5039737EC19A"
             "Condition" = "8:"
@@ -710,6 +1000,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_35F284540AAB411B9C584FA67DAF87B3"
+                    {
+                    "Name" = "8:x86"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_0542C1EA4F0E4ACEACBB5CF21A58A39D"
+                        "Folders"
+                        {
+                        }
+                    }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_BDF08AD072B54C30BA168FAD45B1048C"
                     {
                     "Name" = "8:Dependencies"
@@ -751,7 +1052,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Starwar"
         "ProductCode" = "8:{CAD94AD6-9F0E-4B0C-9AFE-F81B5E19A9F5}"
-        "PackageCode" = "8:{65017A97-0CD0-4155-AC2A-557088F0EE4F}"
+        "PackageCode" = "8:{E18FE80D-8B68-4A41-A543-F56BCF9089C2}"
         "UpgradeCode" = "8:{780740FD-26BB-45EF-B307-B3CEE84D8BB2}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -768,7 +1069,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Starwar Game"
         "ARPURLINFOABOUT" = "8:https://github.com/daxnet/Starwar"
-        "ARPPRODUCTICON" = "8:_868C74EDA50D49D4A4624EA6BE032E4E"
+        "ARPPRODUCTICON" = "8:_6CEAA608AFFC425AABD6EF728FF4EB6B"
         "ARPIconIndex" = "3:32512"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -871,21 +1172,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2FBB33E93A914FDDAE052571F6645D26"
-            {
-            "Name" = "8:Starwar"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:32512"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_868C74EDA50D49D4A4624EA6BE032E4E"
-            "Folder" = "8:_E45BD9ADB6D54BAE867F91392D5B0DCB"
-            "WorkingFolder" = "8:_8B43B83672B4412CBB2B23F4EB70B3DF"
-            "Icon" = "8:_868C74EDA50D49D4A4624EA6BE032E4E"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6E1934F69C73400DA5C04867FE0429F7"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_7F3121654C0C43E582CC9E795E8B450F"
             {
             "Name" = "8:Starwar游戏配置系统"
             "Arguments" = "8:"
@@ -893,10 +1180,24 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:32512"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_8165A2444FFD4AD1AEA8E737233BF327"
+            "Target" = "8:_28EC04CBA0F44BD291C56589D4E1A93C"
             "Folder" = "8:_E45BD9ADB6D54BAE867F91392D5B0DCB"
             "WorkingFolder" = "8:_8B43B83672B4412CBB2B23F4EB70B3DF"
-            "Icon" = "8:_8165A2444FFD4AD1AEA8E737233BF327"
+            "Icon" = "8:_28EC04CBA0F44BD291C56589D4E1A93C"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8484F6F823EE4ADF90DEE7DDA632E5ED"
+            {
+            "Name" = "8:Starwar"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:32512"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_6CEAA608AFFC425AABD6EF728FF4EB6B"
+            "Folder" = "8:_E45BD9ADB6D54BAE867F91392D5B0DCB"
+            "WorkingFolder" = "8:_8B43B83672B4412CBB2B23F4EB70B3DF"
+            "Icon" = "8:_6CEAA608AFFC425AABD6EF728FF4EB6B"
             "Feature" = "8:"
             }
         }
@@ -1298,9 +1599,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8165A2444FFD4AD1AEA8E737233BF327"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_28EC04CBA0F44BD291C56589D4E1A93C"
             {
-            "SourcePath" = "8:..\\Starwar.ConfigTool\\obj\\Debug\\Starwar.ConfigTool.exe"
+            "SourcePath" = "8:..\\Starwar.ConfigTool\\obj\\Release\\Starwar.ConfigTool.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8B43B83672B4412CBB2B23F4EB70B3DF"
@@ -1318,7 +1619,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
+            "OutputConfiguration" = "8:Release|Any CPU"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{9B1B1179-D790-4093-A63B-F861575260DB}"
             "ShowKeyOutput" = "11:TRUE"
@@ -1326,9 +1627,9 @@
                 {
                 }
             }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_868C74EDA50D49D4A4624EA6BE032E4E"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_6CEAA608AFFC425AABD6EF728FF4EB6B"
             {
-            "SourcePath" = "8:..\\Starwar\\obj\\x86\\Debug\\Starwar.exe"
+            "SourcePath" = "8:..\\Starwar\\obj\\x86\\Release\\Starwar.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8B43B83672B4412CBB2B23F4EB70B3DF"
@@ -1346,7 +1647,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
+            "OutputConfiguration" = "8:Release|x86"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{D36BD5E7-DF11-4E89-9131-008C5D45BA8C}"
             "ShowKeyOutput" = "11:TRUE"

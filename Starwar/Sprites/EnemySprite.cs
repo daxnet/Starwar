@@ -15,8 +15,8 @@ namespace Starwar.Sprites
 
         private const string Script = @"
     function CalculatePosition(initX, initY, x, y, speed)
-        return initX + math.sin(y / 100.0) * 100, y + speed
-        -- return x, y + speed
+        -- return initX + math.sin(y / 100.0) * 100, y + speed
+        return x, y + speed
     end
 ";
 
